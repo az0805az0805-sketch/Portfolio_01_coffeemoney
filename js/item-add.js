@@ -44,7 +44,6 @@ function saveItem(event) {
     items.push(newItem);
     localStorage.setItem('items', JSON.stringify(items));
 
-    alert('アイテムを追加しました！');
 
     // 保存が終わったら、IDを引き継いで元のカウント画面に自動で戻る
     window.location.href = `./count.html?categoryId=${currentCategoryId}`;

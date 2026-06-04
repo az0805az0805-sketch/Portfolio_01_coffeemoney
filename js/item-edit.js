@@ -73,8 +73,6 @@ function removeItem(event) {
     // localStorageに上書き保存
     localStorage.setItem('items', JSON.stringify(items));
 
-    alert('アイテムを削除しました。');
-
     // 削除が終わったら自動で元のカウント画面に戻る
     window.location.href = `./count.html?categoryId=${currentCategoryId}`;
 }

@@ -36,6 +36,5 @@ function saveCategory(event) {
     // 6. localStorageに上書き保存
     localStorage.setItem('categories', JSON.stringify(categories));
 
-    // 7. 保存が完了したら、自動的にトップ画面へ戻る
     window.location.href = './index.html';
 }
