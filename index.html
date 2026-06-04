@@ -4,7 +4,6 @@
 <head>
 	<meta charset="UTF-8">
 	<title>CoffeeMoney</title>
-	<!-- CSSのパス（ファイル名や階層が合っているか確認してください） -->
 	<link rel="stylesheet" href="./css/home.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -19,6 +18,22 @@
 
 	<!-- JavaScriptで動的にカテゴリー一覧を挿入するエリア -->
 	<div id="category-list"></div>
+
+	<template id="category-template">
+		<div class="category-row">
+			<a href="" class="category-link">
+				<img src="" alt="icon" class="category-icon">
+				<span class="category-name"></span>
+			</a>
+			<div class="category-actions">
+				<a href="" class="edit-button">カテゴリーを編集</a>
+				<form onsubmit="event.preventDefault();">
+					<button type="button" class="delete-button">削除</button>
+				</form>
+			</div>
+		</div>
+	</template>
+
 
 	<hr>
 

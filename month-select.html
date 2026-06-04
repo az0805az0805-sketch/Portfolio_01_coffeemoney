@@ -4,7 +4,6 @@
 <head>
 	<meta charset="UTF-8">
 	<title>月選択</title>
-	<!-- CSSのパスを通常の相対パスに変更 -->
 	<link rel="stylesheet" href="./css/month-select.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -13,7 +12,6 @@
 
 	<h2>以前の記録を確認する</h2>
 
-	<!-- サーバー送信を止め、JavaScriptのgoToMonthlyRecords関数で処理を行います -->
 	<form id="month-form" onsubmit="goToMonthlyRecords(event)">
 		<label>年：</label>
 		<!-- JSで選択肢を入れ込むため、idを付与 -->
@@ -29,7 +27,6 @@
 	<!-- JSで戻り先URL（ID付き）を自動設定するためidを付与 -->
 	<a href="./index.html" id="back-link">戻る</a>
 
-	<!-- 外部化したJavaScriptファイルをここで読み込みます -->
 	<script src="./js/month-select.js"></script>
 </body>
 
