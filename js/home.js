@@ -28,7 +28,7 @@ function renderCategories() {
 			</a>
 			<div class="category-actions">
 				<!-- 更新ボタン -->
-				<a href="./category-edit.html?id=${cat.id}" class="edit-button">カテゴリーを編集</a>
+				<a href="./edit-category.html?id=${cat.id}" class="edit-button">カテゴリーを編集</a>
 
 				<!-- CSSの「.category-actions form」というルールを活かすためformタグを配置 -->
 				<form onsubmit="event.preventDefault();">

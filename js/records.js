@@ -73,7 +73,6 @@ function deleteRecord(recordId) {
 
     localStorage.setItem('records', JSON.stringify(records));
 
-    // アラートなしで、画面のテーブルと合計・残高金額をその場で再描画
     renderRecordsPage();
 }
 

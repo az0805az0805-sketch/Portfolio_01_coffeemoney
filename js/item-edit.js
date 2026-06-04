@@ -55,8 +55,6 @@ function updateItem(event) {
     // localStorageに上書き保存
     localStorage.setItem('items', JSON.stringify(items));
 
-    alert('アイテムを更新しました！');
-
     // 保存が終わったら自動で元のカウント画面に戻る
     window.location.href = `./count.html?categoryId=${currentCategoryId}`;
 }
