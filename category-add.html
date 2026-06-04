@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>カテゴリー追加</title>
+	<!-- CSSのパスを通常の相対パスに変更 -->
+	<link rel="stylesheet" href="./css/category-add.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+	<h2>カテゴリー追加</h2>
+
+	<!-- サーバー送信を防ぐため、onsubmitにJavaScript処理を指定 -->
+	<form id="category-form" onsubmit="saveCategory(event)">
+		<label>カテゴリー名：</label>
+		<!-- id属性を追加 -->
+		<input type="text" id="category-name" name="name" required>
+
+		<label>予算：</label>
+		<!-- id属性を追加 -->
+		<input type="number" id="category-budget" name="budget" placeholder="例：3000">
+
+		<button type="submit">追加</button>
+	</form>
+
+	<!-- パスをホーム画面（index.html）へ変更 -->
+	<a href="./home.html">戻る</a>
+
+	<!-- ★外部化したJavaScriptファイルをここで読み込みます -->
+	<script src="./js/category-add.js"></script>
+</body>
+</html>

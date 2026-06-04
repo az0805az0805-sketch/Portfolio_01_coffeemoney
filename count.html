@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<title>カウント画面</title>
+	<link rel="stylesheet" href="./css/count.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+	<div class="header-row">
+		<h1>Item Count</h1>
+
+		<a href="#" id="add-item-link" class="add-item-icon-btn">
+			<img src="./icons/food_americandog.png" alt="coffee" class="item-icon">
+			アイテムを追加
+		</a>
+	</div>
+
+	<hr>
+	<p><span id="now">現在日時</span></p>
+
+	<!-- カテゴリー名 -->
+	<h2 id="category-title">Count</h2>
+
+	<!-- アイテム一覧（押すとカウント）を表示するエリア -->
+	<div id="item-list"></div>
+
+	<hr>
+	<p class="badge-total">今月の合計：<span id="monthly-total">0</span> 円</p>
+	<p class="badge-balance">残高：<span id="balance">0</span> 円</p>
+
+	<!-- 詳細画面・戻るのボタン群 -->
+	<div class="action-buttons">
+		<a href="#" id="detail-link" class="detail-button">詳細を見る</a>
+		<a href="./home.html" class="btn-back">ホームに戻る</a>
+	</div>
+	<!-- 時計JSの読み込み -->
+	<script src="./js/count.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<title>CoffeeMoney</title>
+	<!-- CSSのパス（ファイル名や階層が合っているか確認してください） -->
+	<link rel="stylesheet" href="./css/home.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+	<h2 class="app-header">CoffeeMoney</h2>
+
+	<p class="description">ちょっとした支出カウントアプリ<br>
+		ちょこちょこ買うものが月間でいくらになるのかカウントしてみよう</p><br>
+	<p class="blink select-title">↓SELECT CATEGORY↓</p>
+
+	<!-- JavaScriptで動的にカテゴリー一覧を挿入するエリア -->
+	<div id="category-list"></div>
+
+	<hr>
+
+	<a href="./category-add.html" class="add-category-icon-btn">
+		<img src="./icons/coffee_chilled_cup.png" alt="coffee" class="category-icon">
+		<span class="add-icon"></span> カテゴリーを追加
+	</a>
+
+	<script src="./js/home.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<title>アイテム編集</title>
+	<!-- CSSのパスを通常の相対パスに変更 -->
+	<link rel="stylesheet" href="./css/edit-item.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+	<h2>アイテム編集</h2>
+	<div class="item-card">
+
+		<!-- 更新用のフォーム（onsubmitにupdateItemを指定） -->
+		<form id="update-form" onsubmit="updateItem(event)" class="update-form">
+			<!-- ID保持用の隠しフィールド -->
+			<input type="hidden" id="item-id" name="id">
+
+			<label>名前：</label>
+			<input type="text" id="item-name" name="name" required>
+
+			<label>金額：</label>
+			<input type="number" id="item-price" name="price" required>
+
+			<button type="submit" class="update-button">更新</button>
+		</form>
+
+		<!-- 削除用のフォーム（onsubmitにremoveItemを指定） -->
+		<form id="delete-form" onsubmit="removeItem(event)" class="delete-form">
+			<button type="submit" class="delete-button">削除</button>
+		</form>
+
+	</div>
+
+	<!-- JavaScriptでURLを動的に制御して元のカウント画面に戻るため、idと新しいクラスを付与 -->
+	<a href="./home.html" id="back-link" class="back-button">戻る</a>
+
+	<!-- 外部化したJavaScriptファイルをここで読み込みます -->
+	<script src="./js/item-edit.js"></script>
+</body>
+
+</html>
