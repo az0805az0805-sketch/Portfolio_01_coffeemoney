@@ -42,7 +42,6 @@ function renderRecordsPage() {
             const item = items.find(i => i.id === rec.itemId) || { name: '不明なアイテム' };
 
             const tr = document.createElement('tr');
-            // ★金額が表示されるtdに「class="amount"」を付与してCSSの右寄せ設定を適用
             tr.innerHTML = `
                 <td>${formatDate(rec.date)}</td>
                 <td>${escapeHtml(item.name)}</td>
@@ -68,7 +67,6 @@ function renderRecordsPage() {
 function deleteRecord(recordId) {
 
     let records = JSON.parse(localStorage.getItem('records')) || [];
-    // 指定されたレコードID以外のデータを残す（削除処理）
     records = records.filter(rec => rec.id !== recordId);
 
     localStorage.setItem('records', JSON.stringify(records));
@@ -76,7 +74,6 @@ function deleteRecord(recordId) {
     renderRecordsPage();
 }
 
-// 簡易的な日付フォーマット関数
 function formatDate(dateStr) {
     if (!dateStr) return '不明';
     if (dateStr.includes('-')) return dateStr.split('T')[0]; // ISO 8601形式対策
