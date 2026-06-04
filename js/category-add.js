@@ -37,5 +37,5 @@ function saveCategory(event) {
     localStorage.setItem('categories', JSON.stringify(categories));
 
     // 7. 保存が完了したら、自動的にトップ画面へ戻る
-    window.location.href = './home.html';
+    window.location.href = './index.html';
 }
