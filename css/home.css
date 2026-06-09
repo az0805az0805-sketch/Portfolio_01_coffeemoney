@@ -154,33 +154,7 @@ h2 {
 /* ===== スマホ最適化（幅600px以下） ===== */
 @media (max-width: 600px) {
 
-	/* 全体の余白と文字サイズを少し縮小 */
-	body {
-		padding: 20px;
-		font-size: 16px;
-	}
-
-	/* タイトルを少し小さく */
-	h2 {
-		font-size: 26px;
-		margin-bottom: 14px;
-	}
-
-	/* 説明文 */
-	.description {
-		font-size: 15px;
-		line-height: 1.6;
-		margin-bottom: 20px;
-	}
-
-	/* SELECT CATEGORY */
-	.select-title {
-		font-size: 20px;
-		margin-top: 12px;
-		margin-bottom: 16px;
-	}
-
-	/* カテゴリー行をアプリのカードUIに */
+	/* カード全体 */
 	.category-row {
 		display: flex;
 		flex-direction: column;
@@ -192,6 +166,9 @@ h2 {
 		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 		gap: 14px;
 		margin-bottom: 20px;
+
+		/* PC の justify-content: space-between を無効化 */
+		justify-content: flex-start;
 	}
 
 	/* カテゴリー名＋アイコン */
@@ -201,54 +178,37 @@ h2 {
 		gap: 14px;
 		width: 100%;
 		padding: 0;
+
+		/* PC の flex-grow を無効化 */
+		flex-grow: 0;
 	}
 
-	.category-icon {
-		width: 40px;
-		height: auto;
-	}
-
-	.category-name {
-		font-size: 26px;
-		font-weight: bold;
-	}
-
-	/* 編集・削除を縦並びに */
+	/* 編集・削除ボタンを縦並びに */
 	.category-actions {
 		display: flex;
 		flex-direction: column;
 		width: 100%;
 		gap: 10px;
+
+		/* PC の gap: 8px を上書き */
 		margin-top: 4px;
 	}
 
-	/* form も幅100%に */
 	.category-actions form {
 		width: 100%;
 	}
 
-	/* 編集ボタン */
-	.edit-button {
-		display: block;
-		width: 100%;
-		padding: 12px 0;
-		font-size: 16px;
-		border-radius: 10px;
-		background: #9e9e9e;
-		color: #fff;
-		text-align: center;
-	}
-
-	/* 削除ボタン */
+	.edit-button,
 	.delete-button {
 		display: block;
 		width: 100%;
 		padding: 12px 0;
 		font-size: 16px;
 		border-radius: 10px;
-		background: #d9534f;
-		color: #fff;
 		text-align: center;
-		border: none;
+	}
+
+	.delete-button {
+		background: #d9534f;
 	}
 }
