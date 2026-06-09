@@ -4,7 +4,6 @@
 <head>
 	<meta charset="UTF-8">
 	<title>アイテム編集</title>
-	<!-- CSSのパスを通常の相対パスに変更 -->
 	<link rel="stylesheet" href="./css/edit-item.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -14,7 +13,6 @@
 	<h2>アイテム編集</h2>
 	<div class="item-card">
 
-		<!-- 更新用のフォーム（onsubmitにupdateItemを指定） -->
 		<form id="update-form" onsubmit="updateItem(event)" class="update-form">
 			<!-- ID保持用の隠しフィールド -->
 			<input type="hidden" id="item-id" name="id">
@@ -38,7 +36,6 @@
 	<!-- JavaScriptでURLを動的に制御して元のカウント画面に戻るため、idと新しいクラスを付与 -->
 	<a href="./index.html" id="back-link" class="back-button">戻る</a>
 
-	<!-- 外部化したJavaScriptファイルをここで読み込みます -->
 	<script src="./js/item-edit.js"></script>
 </body>
 

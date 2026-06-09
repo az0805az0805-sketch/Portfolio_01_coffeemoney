@@ -3,7 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<title>アイテム追加</title>
-	<!-- 提供いただいたCSSのパスに設定。必要に応じて ./css/item-add.css などに変更してください -->
 	<link rel="stylesheet" href="./css/item-add.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -11,9 +10,7 @@
 
 	<h2>アイテム追加</h2>
 
-	<!-- サーバー送信を止め、JavaScriptのsaveItem関数で登録処理を行います -->
 	<form id="item-form" onsubmit="saveItem(event)">
-		<!-- カテゴリーIDを保持する隠しフィールド -->
 		<input type="hidden" id="category-id" name="categoryId">
 
 		<label>アイテム名：</label>
@@ -25,10 +22,8 @@
 		<button type="submit">追加</button>
 	</form>
 
-	<!-- JSで戻り先URL（ID付き）を自動制御するためidを付与 -->
 	<a href="./index.html" id="back-link">戻る</a>
 
-	<!-- ★外部化したJavaScriptファイルをここで読み込みます -->
 	<script src="./js/item-add.js"></script>
 </body>
 </html>
