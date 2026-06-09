@@ -196,6 +196,7 @@ h2 {
 	.category-actions a,
 	.category-actions button {
 		width: auto;
+		white-space: nowrap; 
 	}
 
 
