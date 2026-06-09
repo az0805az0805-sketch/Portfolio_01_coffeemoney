@@ -250,5 +250,7 @@ h2 {
 		color: #fff;
 		text-align: center;
 		border: none;
+		writing-mode: horizontal-tb;
+		white-space: nowrap;
 	}
 }
