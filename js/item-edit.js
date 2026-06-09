@@ -1,6 +1,4 @@
-/**
- * 
- */const urlParams = new URLSearchParams(window.location.search);
+const urlParams = new URLSearchParams(window.location.search);
 const targetId = parseInt(urlParams.get('id'));
 const currentCategoryId = parseInt(urlParams.get('categoryId')) || 1;
 
@@ -11,8 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (backLink) backLink.href = `./count.html?categoryId=${currentCategoryId}`;
 
     const items = JSON.parse(localStorage.getItem('items')) || [];
-    // 該当するアイテムを探す
-    const item = items.find(i => i.id === targetId);
+    // 【修正】該当し、かつ論理削除されていないアイテムを探す
+    const item = items.find(i => i.id === targetId && i.isDeleted !== true);
 
     if (item) {
         // フォームの各入力欄に現在の値をセット
@@ -46,7 +44,8 @@ function updateItem(event) {
                 id: item.id,
                 categoryId: currentCategoryId,
                 name: nameInput,
-                price: priceInput
+                price: priceInput,
+                isDeleted: item.isDeleted || false // 既存のフラグ状態を維持
             };
         }
         return item;
@@ -59,18 +58,31 @@ function updateItem(event) {
     window.location.href = `./count.html?categoryId=${currentCategoryId}`;
 }
 
-// 4. 削除ボタンが押された時の消去処理
+// 4. 削除ボタンが押された時の消去（論理削除）処理
 function removeItem(event) {
     event.preventDefault(); // サーバーへの送信をキャンセル
 
     let items = JSON.parse(localStorage.getItem('items')) || [];
 
-    // 指定されたアイテムID以外のデータを残す（削除処理）
-    items = items.filter(item => item.id !== targetId);
+    // 現在のアイテム名を取得
+    const currentItem = items.find(item => item.id === targetId);
+    if (!currentItem) return;
 
-    // localStorageに上書き保存
-    localStorage.setItem('items', JSON.stringify(items));
+    
+    if (confirm(`アイテム「${currentItem.name}」を削除しますか？`)) {
+        // 【修正】配列から物理削除するのではなく、フラグを true に書き換える
+        items = items.map(item => {
+            if (item.id === targetId) {
+                return { ...item, isDeleted: true };
+            }
+            return item;
+        });
 
-    // 削除が終わったら自動で元のカウント画面に戻る
-    window.location.href = `./count.html?categoryId=${currentCategoryId}`;
+        // localStorageに上書き保存
+        localStorage.setItem('items', JSON.stringify(items));
+
+        alert('アイテムを削除しました。');
+        // 削除が終わったら自動で元のカウント画面に戻る
+        window.location.href = `./count.html?categoryId=${currentCategoryId}`;
+    }
 }
