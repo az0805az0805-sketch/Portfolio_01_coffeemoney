@@ -1,5 +1,5 @@
 /**
- * 
+ * カテゴリー新規追加処理
  */
 function saveCategory(event) {
     // 1. フォームの標準のページ移動（サーバーへの送信）を止める
@@ -26,15 +26,18 @@ function saveCategory(event) {
         : 1;
 
     // 5. 新しいカテゴリーオブジェクトを作って配列に追加
+    // 【修正】論理削除の判定が正しく動くよう、初期値として false を明示的に追加します
     const newCategory = {
         id: nextId,
         name: nameInput,
-        budget: budgetInput
+        budget: budgetInput,
+        isDeleted: false
     };
     categories.push(newCategory);
 
     // 6. localStorageに上書き保存
     localStorage.setItem('categories', JSON.stringify(categories));
 
+    // 保存が終わったら自動でホーム画面に戻る
     window.location.href = './index.html';
 }

@@ -1,5 +1,5 @@
 /**
- * 
+ * アイテム新規追加処理
  */
 const urlParams = new URLSearchParams(window.location.search);
 const currentCategoryId = parseInt(urlParams.get('categoryId')) || 1;
@@ -38,12 +38,12 @@ function saveItem(event) {
         id: nextId,
         categoryId: currentCategoryId,
         name: nameInput,
-        price: priceInput
+        price: priceInput,
+        isDeleted: false
     };
 
     items.push(newItem);
     localStorage.setItem('items', JSON.stringify(items));
-
 
     // 保存が終わったら、IDを引き継いで元のカウント画面に自動で戻る
     window.location.href = `./count.html?categoryId=${currentCategoryId}`;
