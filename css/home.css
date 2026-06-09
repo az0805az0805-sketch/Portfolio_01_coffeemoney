@@ -252,3 +252,297 @@ h2 {
 		border: none;
 	}
 }
+
+/* ===== 全体 ===== */
+body {
+	font-family: "Helvetica", "Arial", sans-serif;
+	margin: 0;
+	padding: 16px;
+	background: #fafafa;
+}
+
+/* タイトル */
+h2 {
+	text-align: center;
+	font-size: 40px;
+	color: #ffd27f;
+	margin-bottom: 10px;
+}
+
+/* 説明文 */
+.description {
+	text-align: center;
+	font-size: 15px;
+	color: #555;
+	margin-bottom: 20px;
+}
+
+/* SELECT CATEGORY */
+.select-title {
+	text-align: center;
+	font-size: 22px;
+	color: #333;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+/* 点滅 */
+.blink {
+	animation: blinkAnime 1.5s infinite;
+}
+
+@keyframes blinkAnime {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+/* ===== カテゴリー行（PC） ===== */
+.category-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: #f7f7f7;
+	padding: 16px 20px;
+	margin-bottom: 10px;
+	border-radius: 8px;
+	border: 1px solid #ddd;
+}
+
+.category-row:hover {
+	background: #ececec;
+	cursor: pointer;
+}
+
+/* 行全体を押せるリンク */
+.category-link {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	flex-grow: 1;
+	padding: 10px 0;
+	text-decoration: none;
+	color: #333;
+}
+
+/* アイコン */
+.category-icon {
+	width: 38px;
+	height: auto;
+}
+
+/* カテゴリー名 */
+.category-name {
+	font-size: 22px;
+	font-weight: bold;
+	color: #333;
+	text-decoration: none;
+}
+
+/* ボタン配置 */
+.category-actions {
+	display: flex;
+	gap: 8px;
+}
+
+/* ボタン */
+.edit-button,
+.delete-button {
+	padding: 8px 14px;
+	border-radius: 4px;
+	font-size: 14px;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.edit-button {
+	background-color: #9e9e9e;
+	color: white;
+	text-decoration: none;
+}
+
+.delete-button {
+	background-color: #9e9e9e;
+	color: white;
+	border: none;
+}
+
+/* ホバー時ふわっと浮く */
+.edit-button:hover,
+.delete-button:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.add-category-icon-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	margin-top: 10px;
+	padding: 8px 16px;
+	background: #ffd27f;
+	color: #333;
+	font-weight: bold;
+	border-radius: 20px;
+	text-decoration: none;
+	transition: 0.2s ease;
+}
+
+.add-category-icon-btn:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.add-icon {
+	font-size: 20px;
+}
+
+/* ===== スマホ最適化（幅600px以下） ===== */
+@media (max-width: 600px) {
+
+	/* 全体の余白と文字サイズを少し縮小 */
+	body {
+		padding: 20px;
+		font-size: 16px;
+	}
+
+	/* タイトルを少し小さく */
+	h2 {
+		font-size: 26px;
+		margin-bottom: 14px;
+	}
+
+	/* 説明文 */
+	.description {
+		font-size: 15px;
+		line-height: 1.6;
+		margin-bottom: 20px;
+	}
+
+	/* SELECT CATEGORY */
+	.select-title {
+		font-size: 20px;
+		margin-top: 12px;
+		margin-bottom: 16px;
+	}
+
+	/* カテゴリー行をアプリのカードUIに */
+	.category-row {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		width: 100%;
+		padding: 20px;
+		border-radius: 16px;
+		background: #ffffff;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+		gap: 14px;
+		margin-bottom: 20px;
+	}
+
+	/* カテゴリー名＋アイコン */
+	.category-link {
+		display: flex;
+		align-items: center;
+		gap: 14px;
+		width: 100%;
+		padding: 0;
+	}
+
+	.category-icon {
+		width: 40px;
+		height: auto;
+	}
+
+	.category-name {
+		font-size: 26px;
+		font-weight: bold;
+	}
+
+	/* 編集・削除を縦並びに */
+	.category-actions {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		gap: 10px;
+		margin-top: 4px;
+	}
+
+	/* form も幅100%に */
+	.category-actions form {
+		width: 100%;
+	}
+
+	/* 編集ボタン */
+	.edit-button {
+		display: block;
+		width: 100%;
+		padding: 12px 0;
+		font-size: 16px;
+		border-radius: 10px;
+		background: #9e9e9e;
+		color: #fff;
+		text-align: center;
+	}
+
+	/* 削除ボタン */
+	.delete-button {
+		display: block;
+		width: 100%;
+		padding: 12px 0;
+		font-size: 16px;
+		border-radius: 10px;
+		background: #d9534f;
+		color: #fff;
+		text-align: center;
+		border: none;
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+/* 2. アクションエリア内のフォーム初期化 */
+.category-actions form {
+	width: 100% !important;
+	max-width: none !important;
+	padding: 0 !important;
+	background: none !important;
+	box-shadow: none !important;
+	margin: 0 !important;
+	border-radius: 0 !important;
+}
+
+/* 3. スマホ表示時のボタンとリンクのサイズ微調整 */
+@media (max-width: 600px) {
+
+	/* コンテナがはみ出さないように横幅を制限 */
+	#category-list {
+		width: 100%;
+		overflow: hidden;
+	}
+
+	.category-row {
+		width: 100%;
+		box-sizing: border-box;
+		/* 枠線と余白を含めて100%にする */
+	}
+
+	/* ボタンのテキストが中央に綺麗に収まるように指定 */
+	.edit-button,
+	.delete-button {
+		box-sizing: border-box;
+		display: block;
+		width: 100%;
+		text-align: center;
+		margin: 0;
+	}
+}
