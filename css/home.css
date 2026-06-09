@@ -185,7 +185,7 @@ h2 {
 	/* 編集・削除ボタンを縦並びに */
 	.category-actions {
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
 		width: 100%;
 		gap: 10px;
 
@@ -193,9 +193,11 @@ h2 {
 		margin-top: 4px;
 	}
 
-	.category-actions form {
-		width: 100%;
+	.category-actions a,
+	.category-actions button {
+		width: auto;
 	}
+
 
 	.edit-button,
 	.delete-button {
