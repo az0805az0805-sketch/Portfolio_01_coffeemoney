@@ -78,9 +78,8 @@ function renderRecordsPage() {
     document.getElementById('budget').textContent = currentCategory.budget.toLocaleString();
     document.getElementById('balance').textContent = balance.toLocaleString();
 }
-
-// 4. 個別の削除ボタンが押された時の処理
-function deleteRecord(recordId) {
+// 4. 個別の削除ボタンが押された時の処理（windowに紐付けてHTMLから呼べるようにする）
+window.deleteRecord = function(recordId) {
     if (confirm('この支出履歴を削除しますか？')) {
         let records = JSON.parse(localStorage.getItem('records')) || [];
         records = records.filter(rec => rec.id !== recordId);
